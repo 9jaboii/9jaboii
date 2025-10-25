@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>aiwebsite Repository Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Repository Explorer</p>
+          <h1>aiwebsite files</h1>
+          <p class="lede">
+            A live directory tree that showcases every file currently available in
+            the <strong>aiwebsite</strong> GitHub repository. Browse folders,
+            search for specific files, and refresh the listing at any time.
+          </p>
+        </div>
+        <div class="meta">
+          <div class="meta__item">
+            <span class="meta__label">Owner</span>
+            <span class="meta__value" id="repoOwner">&mdash;</span>
+          </div>
+          <div class="meta__item">
+            <span class="meta__label">Default branch</span>
+            <span class="meta__value" id="defaultBranch">&mdash;</span>
+          </div>
+          <div class="meta__item">
+            <span class="meta__label">Total files</span>
+            <span class="meta__value" id="totalFiles">0</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="controls" aria-label="Repository controls">
+        <div class="field">
+          <label for="branchSelect">Branch</label>
+          <select id="branchSelect" class="input"></select>
+        </div>
+        <div class="field field--grow">
+          <label for="searchInput">Search</label>
+          <input
+            id="searchInput"
+            class="input"
+            type="search"
+            placeholder="Filter files by name…"
+            autocomplete="off"
+          />
+        </div>
+        <button id="refreshButton" class="button" type="button">
+          <span class="button__icon" aria-hidden="true">&#x21bb;</span>
+          Refresh
+        </button>
+      </section>
+
+      <section id="status" class="status" role="status" aria-live="polite">
+        Loading repository data…
+      </section>
+
+      <section class="tree" id="treeSection" hidden>
+        <div id="emptyState" class="empty" hidden>
+          <h2>No matching files</h2>
+          <p>Adjust your search or refresh the repository listing to try again.</p>
+        </div>
+        <ul class="tree__list" id="treeContainer" aria-label="Repository file structure"></ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Powered by the public GitHub API. File listings update instantly based on
+        the selected branch so you always see the latest structure.
+      </p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
