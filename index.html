@@ -3,82 +3,69 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>aiwebsite Repository Explorer</title>
+    <title>aiwebsite file browser</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="page">
+    <main class="layout">
       <header class="hero">
-        <div>
-          <p class="eyebrow">Repository Explorer</p>
-          <h1>aiwebsite files</h1>
-          <p class="lede">
-            A live directory tree that showcases every file currently available in
-            the <strong>aiwebsite</strong> GitHub repository. Browse folders,
-            search for specific files, and refresh the listing at any time.
+        <div class="hero__content">
+          <p class="eyebrow">Repository overview</p>
+          <h1>aiwebsite file browser</h1>
+          <p id="description">
+            Loading repository description…
           </p>
         </div>
-        <div class="meta">
-          <div class="meta__item">
-            <span class="meta__label">Owner</span>
-            <span class="meta__value" id="repoOwner">&mdash;</span>
+        <dl class="stats">
+          <div class="stats__item">
+            <dt>Default branch</dt>
+            <dd id="defaultBranch">—</dd>
           </div>
-          <div class="meta__item">
-            <span class="meta__label">Default branch</span>
-            <span class="meta__value" id="defaultBranch">&mdash;</span>
+          <div class="stats__item">
+            <dt>Files tracked</dt>
+            <dd id="fileCount">0</dd>
           </div>
-          <div class="meta__item">
-            <span class="meta__label">Total files</span>
-            <span class="meta__value" id="totalFiles">0</span>
-          </div>
-        </div>
+        </dl>
       </header>
 
       <section class="controls" aria-label="Repository controls">
-        <div class="field">
-          <label for="branchSelect">Branch</label>
-          <select id="branchSelect" class="input"></select>
-        </div>
-        <div class="field field--grow">
-          <label for="searchInput">Search</label>
+        <label class="search" for="searchInput">
+          <span class="search__label">Filter files</span>
           <input
             id="searchInput"
-            class="input"
+            class="search__field"
             type="search"
-            placeholder="Filter files by name…"
+            placeholder="Start typing to filter…"
             autocomplete="off"
           />
-        </div>
-        <button id="refreshButton" class="button" type="button">
-          <span class="button__icon" aria-hidden="true">&#x21bb;</span>
-          Refresh
-        </button>
+        </label>
+        <button id="refreshButton" class="button" type="button">Refresh</button>
       </section>
 
       <section id="status" class="status" role="status" aria-live="polite">
-        Loading repository data…
+        Fetching repository details…
       </section>
 
-      <section class="tree" id="treeSection" hidden>
+      <section class="list" id="listSection" hidden>
+        <ul class="file-list" id="fileList" aria-label="Repository files"></ul>
         <div id="emptyState" class="empty" hidden>
           <h2>No matching files</h2>
-          <p>Adjust your search or refresh the repository listing to try again.</p>
+          <p>Try a different search term or refresh the listing.</p>
         </div>
-        <ul class="tree__list" id="treeContainer" aria-label="Repository file structure"></ul>
       </section>
     </main>
 
     <footer class="footer">
-      <p>
-        Powered by the public GitHub API. File listings update instantly based on
-        the selected branch so you always see the latest structure.
-      </p>
+      <small>
+        Data is pulled live from the GitHub API so the listing always reflects the
+        latest files in the repository.
+      </small>
     </footer>
 
     <script type="module" src="script.js"></script>
