@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>aiwebsite file browser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <header class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">Repository overview</p>
+          <h1>aiwebsite file browser</h1>
+          <p id="description">
+            Loading repository description…
+          </p>
+        </div>
+        <dl class="stats">
+          <div class="stats__item">
+            <dt>Default branch</dt>
+            <dd id="defaultBranch">—</dd>
+          </div>
+          <div class="stats__item">
+            <dt>Files tracked</dt>
+            <dd id="fileCount">0</dd>
+          </div>
+        </dl>
+      </header>
+
+      <section class="controls" aria-label="Repository controls">
+        <label class="search" for="searchInput">
+          <span class="search__label">Filter files</span>
+          <input
+            id="searchInput"
+            class="search__field"
+            type="search"
+            placeholder="Start typing to filter…"
+            autocomplete="off"
+          />
+        </label>
+        <button id="refreshButton" class="button" type="button">Refresh</button>
+      </section>
+
+      <section id="status" class="status" role="status" aria-live="polite">
+        Fetching repository details…
+      </section>
+
+      <section class="list" id="listSection" hidden>
+        <ul class="file-list" id="fileList" aria-label="Repository files"></ul>
+        <div id="emptyState" class="empty" hidden>
+          <h2>No matching files</h2>
+          <p>Try a different search term or refresh the listing.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>
+        Data is pulled live from the GitHub API so the listing always reflects the
+        latest files in the repository.
+      </small>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
