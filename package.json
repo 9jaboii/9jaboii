@@ -1,0 +1,28 @@
+{
+  "name": "ccarchprep",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "validate:bank": "node scripts/validate-bank.mjs",
+    "test": "npm run validate:bank"
+  },
+  "dependencies": {
+    "next": "15.5.7",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "15.5.7",
+    "typescript": "^5.8.0"
+  },
+  "engines": { "node": ">=22" }
+}

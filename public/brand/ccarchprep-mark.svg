@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">CCArchPrep mark</title>
+  <desc id="desc">Two architectural letter C forms surrounding an ascending stair.</desc>
+  <rect width="256" height="256" rx="52" fill="#181714"/>
+  <path d="M184 57c-15-13-34-20-56-20-50 0-91 41-91 91s41 91 91 91c22 0 41-7 56-20l-23-27c-9 7-20 11-33 11-30 0-55-25-55-55s25-55 55-55c13 0 24 4 33 11z" fill="#F7F3EA"/>
+  <path d="M184 94c-10-10-24-16-40-16-28 0-50 22-50 50s22 50 50 50c16 0 30-6 40-16l-21-23c-5 5-11 7-19 7-10 0-18-8-18-18s8-18 18-18c8 0 14 2 19 7z" fill="#C85B3C"/>
+  <path d="M140 151h23v-21h21v-21h21v63h-65z" fill="#C7973E"/>
+</svg>
