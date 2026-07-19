@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" role="img" aria-labelledby="title desc">
+  <title id="title">CCArchPrep</title>
+  <desc id="desc">CCArchPrep wordmark with architectural double-C stair symbol.</desc>
+  <rect x="16" y="16" width="148" height="148" rx="32" fill="#181714"/>
+  <path d="M121 49c-9-8-20-12-33-12-29 0-53 24-53 53s24 53 53 53c13 0 24-4 33-12l-14-16c-5 4-12 7-19 7-18 0-32-14-32-32s14-32 32-32c7 0 14 3 19 7z" fill="#F7F3EA"/>
+  <path d="M121 71c-6-6-14-9-23-9-16 0-29 12-29 28s13 28 29 28c9 0 17-3 23-9l-12-13c-3 3-7 4-11 4-6 0-11-4-11-10s5-10 11-10c4 0 8 1 11 4z" fill="#C85B3C"/>
+  <path d="M95 104h14V92h12V80h12v36H95z" fill="#C7973E"/>
+  <text x="194" y="112" fill="#181714" font-family="Inter, system-ui, sans-serif" font-size="66" font-weight="750" letter-spacing="-3">CCArchPrep</text>
+  <text x="198" y="143" fill="#3B3933" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="500" letter-spacing="1.2">PRACTICE ARCHITECTURAL JUDGMENT</text>
+</svg>

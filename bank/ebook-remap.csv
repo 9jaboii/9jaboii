@@ -1,0 +1,8 @@
+domain_code,domain_label,ebook_chapter,ebook_stage,deep_link,status,notes
+d1,Architecture and design,TBD,TBD,TBD,blocked,"Requires canonical blueprint and stable ebook URLs"
+d2,Models and prompting,TBD,TBD,TBD,blocked,"Requires canonical blueprint and stable ebook URLs"
+d3,Integration,TBD,TBD,TBD,blocked,"Requires canonical blueprint and stable ebook URLs"
+d4,Evaluation,TBD,TBD,TBD,blocked,"Requires canonical blueprint and stable ebook URLs"
+d5,Governance,TBD,TBD,TBD,blocked,"Requires canonical blueprint and stable ebook URLs"
+d6,Stakeholder practice,TBD,TBD,TBD,blocked,"Requires canonical blueprint and stable ebook URLs"
+d7,Developer productivity,TBD,TBD,TBD,blocked,"Requires canonical blueprint and stable ebook URLs"

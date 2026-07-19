@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">CCArchPrep social card</title>
+  <desc id="desc">Warm editorial launch card reading Think like an architect. Prepare with intent.</desc>
+  <rect width="1200" height="630" fill="#F7F3EA"/>
+  <path d="M0 510 410 100h210L210 510z" fill="#EEE8DB"/>
+  <path d="M930 630V470h80v-80h80v-80h110v320z" fill="#C7973E" opacity=".9"/>
+  <rect x="72" y="64" width="72" height="72" rx="16" fill="#181714"/>
+  <path d="M124 80c-5-4-10-6-17-6-15 0-27 12-27 27s12 27 27 27c7 0 12-2 17-6l-7-9c-3 3-6 4-10 4-9 0-16-7-16-16s7-16 16-16c4 0 7 1 10 4z" fill="#F7F3EA"/>
+  <path d="M124 91c-3-3-7-5-12-5-8 0-14 7-14 15s6 15 14 15c5 0 9-2 12-5l-6-7c-2 2-4 2-6 2-3 0-5-2-5-5s2-5 5-5c2 0 4 0 6 2z" fill="#C85B3C"/>
+  <text x="166" y="115" fill="#181714" font-family="Inter, system-ui, sans-serif" font-size="38" font-weight="750">CCArchPrep</text>
+  <text x="72" y="272" fill="#181714" font-family="Georgia, serif" font-size="72" font-weight="700">Think like an architect.</text>
+  <text x="72" y="358" fill="#C85B3C" font-family="Georgia, serif" font-size="72" font-weight="700">Prepare with intent.</text>
+  <text x="76" y="430" fill="#3B3933" font-family="Inter, system-ui, sans-serif" font-size="27">Original scenarios. Every option explained. Independent and unofficial.</text>
+  <rect x="76" y="484" width="215" height="58" rx="29" fill="#181714"/>
+  <text x="108" y="522" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700">$59 / year</text>
+</svg>

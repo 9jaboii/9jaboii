@@ -1,0 +1,136 @@
+{
+  "notice": "Original editorial samples. Structurally reviewed, but not approved for publication until the official exam blueprint and two named human reviewers are recorded.",
+  "schema_version": 1,
+  "items": [
+    {
+      "slug": "d1-sample-001", "version": 1, "domain": "d1", "difficulty": 2, "is_multi": false,
+      "stem": "A regional insurer wants an assistant to summarize claim notes. The first release must reduce adjuster reading time, but policy requires every consequential recommendation to remain attributable to the source note. Which design best satisfies the deciding constraint?",
+      "options": [
+        {"key":"A","text":"Generate a fluent summary and ask adjusters to search the notes when something seems unusual.","mold":"compensating_control"},
+        {"key":"B","text":"Return a structured summary whose claims carry source-note citations, and require the adjuster to approve any recommendation.","mold":null},
+        {"key":"C","text":"Fine-tune immediately on all historical claims so the model learns the insurer's preferred writing style.","mold":"over_engineered"},
+        {"key":"D","text":"Use the largest available model because higher general capability guarantees traceability.","mold":"plausible_myth"}
+      ],
+      "correct_keys":["B"],
+      "rationale":{"correct":"B makes attribution part of the output contract and preserves human authority over consequential action.","wrong":{"A":"A manual search suggestion is a compensating control; it does not make each claim traceable.","C":"Fine-tuning is disproportionate and does not itself provide source attribution.","D":"Model capability and provenance are different properties; traceability must be designed."}},
+      "review":{"status":"awaiting_two_human_reviews","blueprint_source":null,"author_attestation":true}
+    },
+    {
+      "slug": "d1-sample-002", "version": 1, "domain": "d1", "difficulty": 3, "is_multi": true,
+      "stem": "A bank is piloting a support copilot. Customer data must remain within an approved boundary, and the security team needs evidence before production. Which TWO actions form the strongest mechanism-and-evidence pair?",
+      "options": [
+        {"key":"A","text":"Route requests only through the approved private boundary with explicit egress controls.","mold":null},
+        {"key":"B","text":"Ask developers to avoid entering sensitive data during the pilot.","mold":"compensating_control"},
+        {"key":"C","text":"Run boundary tests and retain network and application audit evidence showing prohibited egress is blocked.","mold":null},
+        {"key":"D","text":"Publish a policy page explaining that the pilot is intended to be private.","mold":"wrong_constraint"}
+      ],
+      "correct_keys":["A","C"],
+      "rationale":{"correct":"A is the preventive mechanism; C supplies repeatable evidence that the boundary works.","wrong":{"B":"User caution is not an enforceable data boundary.","D":"A statement of intent neither enforces nor verifies isolation."}},
+      "review":{"status":"awaiting_two_human_reviews","blueprint_source":null,"author_attestation":true}
+    },
+    {
+      "slug": "d2-sample-001", "version": 1, "domain": "d2", "difficulty": 2, "is_multi": false,
+      "stem": "A procurement assistant extracts renewal dates from contracts with inconsistent layouts. The team can supply six representative examples and needs a reversible improvement this week. What should it try first?",
+      "options": [
+        {"key":"A","text":"Add the representative examples and a strict output schema, then evaluate on a held-out contract set.","mold":null},
+        {"key":"B","text":"Fine-tune a model before establishing a baseline.","mold":"over_engineered"},
+        {"key":"C","text":"Increase temperature so the model can adapt to more layouts.","mold":"plausible_myth"},
+        {"key":"D","text":"Replace extraction with free-form summarization because summaries are easier to read.","mold":"wrong_constraint"}
+      ],
+      "correct_keys":["A"],
+      "rationale":{"correct":"A is fast, reversible, constrains the output, and couples the change to held-out evidence.","wrong":{"B":"Fine-tuning before a baseline is costly and obscures whether simpler prompting works.","C":"More randomness conflicts with consistent extraction.","D":"Readability is not the requirement; reliable field extraction is."}},
+      "review":{"status":"awaiting_two_human_reviews","blueprint_source":null,"author_attestation":true}
+    },
+    {
+      "slug": "d3-sample-001", "version": 1, "domain": "d3", "difficulty": 3, "is_multi": false,
+      "stem": "An order assistant may look up orders and request cancellations. Cancellation is irreversible after warehouse release. Which tool design best limits risk without blocking valid requests?",
+      "options": [
+        {"key":"A","text":"Expose one general tool that accepts arbitrary operation names and arguments.","mold":"over_engineered"},
+        {"key":"B","text":"Expose a typed cancellation tool that validates order state and requires explicit user confirmation immediately before execution.","mold":null},
+        {"key":"C","text":"Let the model cancel and email the customer afterward so mistakes are visible.","mold":"compensating_control"},
+        {"key":"D","text":"Put a warning in the system prompt that cancellations are important.","mold":"plausible_myth"}
+      ],
+      "correct_keys":["B"],
+      "rationale":{"correct":"B narrows capability, enforces the business precondition, and places confirmation at the irreversible boundary.","wrong":{"A":"A generic executor grants unnecessary authority and weakens validation.","C":"Notification after execution cannot prevent irreversible harm.","D":"Prompt guidance is not an authorization or transaction control."}},
+      "review":{"status":"awaiting_two_human_reviews","blueprint_source":null,"author_attestation":true}
+    },
+    {
+      "slug": "d3-sample-002", "version": 1, "domain": "d3", "difficulty": 2, "is_multi": false,
+      "stem": "A travel assistant calls a hotel search service that sometimes times out. Users must not receive duplicate bookings when they retry. Which integration change addresses the core failure mode?",
+      "options": [
+        {"key":"A","text":"Add an idempotency key to booking requests and persist the resulting booking state.","mold":null},
+        {"key":"B","text":"Increase the model context window so it remembers more of the conversation.","mold":"wrong_constraint"},
+        {"key":"C","text":"Ask the user not to retry for five minutes.","mold":"compensating_control"},
+        {"key":"D","text":"Run three booking calls in parallel and accept the fastest.","mold":"plausible_myth"}
+      ],
+      "correct_keys":["A"],
+      "rationale":{"correct":"A makes retries safe at the transactional boundary and preserves authoritative state.","wrong":{"B":"Conversation memory cannot make an external side effect idempotent.","C":"A user instruction is not reliable retry control.","D":"Parallel side effects increase the duplicate-booking risk."}},
+      "review":{"status":"awaiting_two_human_reviews","blueprint_source":null,"author_attestation":true}
+    },
+    {
+      "slug": "d4-sample-001", "version": 1, "domain": "d4", "difficulty": 2, "is_multi": false,
+      "stem": "A legal-intake summarizer scores 92% on a test set, but reviewers say it often omits deadlines—the highest-cost error. What is the best next evaluation change?",
+      "options": [
+        {"key":"A","text":"Report only the aggregate score because it is easy for leadership to compare.","mold":"wrong_constraint"},
+        {"key":"B","text":"Add deadline-omission cases, score that failure separately, and set a release threshold tied to its risk.","mold":null},
+        {"key":"C","text":"Increase the number of low-risk examples until the aggregate reaches 95%.","mold":"plausible_myth"},
+        {"key":"D","text":"Have reviewers inspect production outputs informally after launch.","mold":"compensating_control"}
+      ],
+      "correct_keys":["B"],
+      "rationale":{"correct":"B aligns the evaluation slice and release decision with the costly failure mode.","wrong":{"A":"An aggregate hides the behavior that determines risk.","C":"Adding easy cases can improve the metric without improving deadline capture.","D":"Informal post-launch review does not establish a pre-release safety threshold."}},
+      "review":{"status":"awaiting_two_human_reviews","blueprint_source":null,"author_attestation":true}
+    },
+    {
+      "slug": "d4-sample-002", "version": 1, "domain": "d4", "difficulty": 3, "is_multi": true,
+      "stem": "A claims assistant update improves average answer quality but may have regressed rare denial cases. Which TWO steps provide the most decision-useful release evidence?",
+      "options": [
+        {"key":"A","text":"Run a paired comparison on a frozen set that includes sufficient denial edge cases.","mold":null},
+        {"key":"B","text":"Ask the development team whether the new prompt looks clearer.","mold":"plausible_myth"},
+        {"key":"C","text":"Define a denial-case non-regression threshold and inspect failures before release.","mold":null},
+        {"key":"D","text":"Deploy globally and depend on customer complaints to reveal regressions.","mold":"compensating_control"}
+      ],
+      "correct_keys":["A","C"],
+      "rationale":{"correct":"A supplies comparable evidence on the relevant slice; C turns that evidence into a risk-based release rule.","wrong":{"B":"Prompt readability is not outcome evidence.","D":"Complaints are delayed, incomplete detection after users bear the harm."}},
+      "review":{"status":"awaiting_two_human_reviews","blueprint_source":null,"author_attestation":true}
+    },
+    {
+      "slug": "d5-sample-001", "version": 1, "domain": "d5", "difficulty": 3, "is_multi": false,
+      "stem": "A benefits assistant can draft eligibility explanations, but regulations require a human to make the final eligibility decision and explain the evidence used. Which control is strongest?",
+      "options": [
+        {"key":"A","text":"Allow the assistant to decide when its confidence is high and sample some decisions later.","mold":"compensating_control"},
+        {"key":"B","text":"Keep the system in draft-only mode, present cited evidence, and record the authorized reviewer's decision.","mold":null},
+        {"key":"C","text":"Use a more capable model so human review becomes unnecessary.","mold":"plausible_myth"},
+        {"key":"D","text":"Hide uncertainty from reviewers to reduce cognitive load.","mold":"wrong_constraint"}
+      ],
+      "correct_keys":["B"],
+      "rationale":{"correct":"B encodes the required authority boundary and retains evidence and accountability.","wrong":{"A":"Sampling after autonomous decisions violates the required decision authority.","C":"Capability does not supersede a mandated human decision.","D":"Reducing useful decision evidence undermines accountable review."}},
+      "review":{"status":"awaiting_two_human_reviews","blueprint_source":null,"author_attestation":true}
+    },
+    {
+      "slug": "d6-sample-001", "version": 1, "domain": "d6", "difficulty": 2, "is_multi": false,
+      "stem": "Operations wants faster ticket closure; compliance wants complete auditability. The teams disagree about whether the pilot succeeded. What should the architect do before changing the system?",
+      "options": [
+        {"key":"A","text":"Choose the metric preferred by the executive sponsor.","mold":"wrong_constraint"},
+        {"key":"B","text":"Define a shared decision record with measurable speed and auditability thresholds, owners, and a release rule.","mold":null},
+        {"key":"C","text":"Add more dashboard charts so each team can choose its own conclusion.","mold":"over_engineered"},
+        {"key":"D","text":"Run the pilot longer without changing its success criteria.","mold":"compensating_control"}
+      ],
+      "correct_keys":["B"],
+      "rationale":{"correct":"B makes both constraints measurable and establishes how evidence will drive a shared decision.","wrong":{"A":"Sponsor preference does not resolve the compliance constraint.","C":"More visualization cannot repair undefined or conflicting criteria.","D":"More data against ambiguous criteria prolongs the disagreement."}},
+      "review":{"status":"awaiting_two_human_reviews","blueprint_source":null,"author_attestation":true}
+    },
+    {
+      "slug": "d7-sample-001", "version": 1, "domain": "d7", "difficulty": 2, "is_multi": false,
+      "stem": "A coding assistant generates database migrations quickly, but one suggestion dropped a production column. The team wants to keep the speed benefit. Which workflow change best addresses the risk?",
+      "options": [
+        {"key":"A","text":"Permit direct production execution when the generated explanation sounds confident.","mold":"plausible_myth"},
+        {"key":"B","text":"Require migrations to pass schema-diff checks and a disposable-database test, then receive human approval before production.","mold":null},
+        {"key":"C","text":"Tell developers to read destructive migrations more carefully.","mold":"compensating_control"},
+        {"key":"D","text":"Ban the assistant from all coding tasks.","mold":"wrong_constraint"}
+      ],
+      "correct_keys":["B"],
+      "rationale":{"correct":"B keeps generation speed while adding automated evidence and approval at the destructive boundary.","wrong":{"A":"Confidence language does not establish migration safety.","C":"Attention alone is a weak control for a repeatable destructive failure.","D":"A total ban discards the desired productivity benefit instead of controlling the risky action."}},
+      "review":{"status":"awaiting_two_human_reviews","blueprint_source":null,"author_attestation":true}
+    }
+  ]
+}
